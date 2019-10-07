@@ -20,15 +20,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //TODO 1: Disable the play/pause button by default (you'll enable it later)
+        //todoes 1: Disable the play/pause button by default (you'll enable it later)
         play_pause_button.isEnabled = false
 
-        //TODO 2: Add the play/pause functionality including the animation for the button and
-        //TODO playing or pausing the VideoView.
+        //todoes 2: Add the play/pause functionality including the animation for the button and
+        //todoes playing or pausing the VideoView.
         playOrPauseFunctionality()
 
-        //TODO 3: Add functionality to listen to seekbar drag events to set videoview to the
-        //TODO appropriate part of the video.
+        //todoes 3: Add functionality to listen to seekbar drag events to set videoview to the
+        //todoes appropriate part of the video.
         seekBarFunctionality()
     }
 
@@ -78,11 +78,11 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
 
-        //TODO 4: Set the video URI to the videoview (This video is an mp4 file in the raw folder )
+        //todoes 4: Set the video URI to the videoview (This video is an mp4 file in the raw folder )
         video_view.setVideoURI(Uri.parse("android.resource://" + packageName + "/" + R.raw.live_views_of_starman))
 
-        //TODO 5: Set an onPreparedListener to the videoview and enable the play/pause button in the
-        //TODO callback
+        //todoes 5: Set an onPreparedListener to the videoview and enable the play/pause button in the
+        //todoes callback
         video_view.setOnPreparedListener {
             play_pause_button.isEnabled = true
             it?.let{
@@ -91,19 +91,19 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    //TODO 8: Pause the video when onStop is called, if user navigates away from the screen
+    //todoes 8: Pause the video when onStop is called, if user navigates away from the screen
     override fun onStop() {
         super.onStop()
         video_view.pause()
     }
 
-    //TODO 7: Notice that we create an overflow menu to handle navigation between activities
+    //todoes 7: Notice that we create an overflow menu to handle navigation between activities
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_file, menu)
         return super.onCreateOptionsMenu(menu)
     }
 
-    //TODO 6: Notice that we will use an overflow menu to navigate to the ExoPlayerActivity
+    //todoes 6: Notice that we will use an overflow menu to navigate to the ExoPlayerActivity
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         startActivity(Intent(this@MainActivity, ExoPlayerActivity::class.java))
         // logic that can be used for the intent when...
