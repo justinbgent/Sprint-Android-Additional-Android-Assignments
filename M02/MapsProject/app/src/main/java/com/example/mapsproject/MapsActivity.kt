@@ -30,31 +30,29 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mapFragment.getMapAsync(this)
     }
 
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
+
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
 
+//        PRE DONE CODE
         // Add a marker in Sydney and move the camera
-        val sydney = LatLng(-34.0, 151.0)
-        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+//        val sydney = LatLng(-34.0, 151.0)
+//        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
+//        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+
+
+        //Add buttons here to prevent crashes on premature use
+        pin_btn.setOnClickListener {
+            val latLng = mMap.cameraPosition.target
+            mMap.addMarker(MarkerOptions().position(latLng).title("Your Pin"))
+        }
 
         position_btn.setOnClickListener {
             requestPermission()
-
-            //val latLng = mMap.cameraPosition.target
-
         }
     }
 
+    //REQUESTS USER FOR PERMISSION TO GET THEIR LOCATION
     fun requestPermission(){
         ActivityCompat
             .requestPermissions(this,
@@ -62,17 +60,20 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 232)
     }
 
+    //Checks if permission is granted then moves camera to user location
     fun getCurrentLocation() {
         if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION)
             == PackageManager.PERMISSION_GRANTED) {
 
             val locationProvider = LocationServices.getFusedLocationProviderClient(this)
-            //val location: Location? = locationProvider.lastLocation.result
 
+            //Need listener because it takes time to get location. This statement alone goes
+            //fast than thread getting it "locationProvider.lastLocation.result"
             locationProvider.lastLocation.addOnSuccessListener {
                 if (it != null) {
                     val latLng = LatLng(it.latitude, it.longitude)
-                    mMap.addMarker(MarkerOptions().position(latLng).title("Your Location"))
+                    //can call a pin on location right away if desired
+                    //mMap.addMarker(MarkerOptions().position(latLng).title("Your Location"))
                     mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng))
                 }
             }
@@ -80,6 +81,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         }
     }
 
+//    WHEN LOCATION PERMISSION REQUEST IS SUCCESSFUL, MOVES CAMERA TO LOCATION getCurrentLocation()
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
