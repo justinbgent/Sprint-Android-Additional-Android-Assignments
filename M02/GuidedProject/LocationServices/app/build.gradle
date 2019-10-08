@@ -23,6 +23,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
         }
+        //This way I can use key defined in: C:\Users\beast\.gradle\gradle.properties
+        debug{
+            buildConfigField 'String', "ApiKey", MyGoogleMaps_ApiKey
+            resValue 'string', "api_key", MyGoogleMaps_ApiKey
+        }
     }
     testOptions {
         unitTests {
@@ -54,6 +59,8 @@ dependencies {
 
     // TODO S9M2-01: Add Google Play Services
     // Google Play Services
+    implementation "com.google.android.gms:play-services-maps:17.0.0"
+    implementation "com.google.android.gms:play-services-location:17.0.0"
 
     // ViewModel
     implementation "androidx.lifecycle:lifecycle-extensions:2.1.0"
