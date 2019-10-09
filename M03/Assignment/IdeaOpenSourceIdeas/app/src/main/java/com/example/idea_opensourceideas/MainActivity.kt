@@ -2,6 +2,7 @@ package com.example.idea_opensourceideas
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -13,8 +14,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //setSupportActionBar(toolbar)
-        //toolbar.title = "Idea"
+        setSupportActionBar(toolbar)
+        toolbar.title = "Idea"
 
         val toggle = ActionBarDrawerToggle(this, drawer_layout,
             toolbar, R.string.open_drawer, R.string.close_drawer)
@@ -37,6 +38,11 @@ class MainActivity : AppCompatActivity() {
 
             true
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_sign_out, menu)
+        return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

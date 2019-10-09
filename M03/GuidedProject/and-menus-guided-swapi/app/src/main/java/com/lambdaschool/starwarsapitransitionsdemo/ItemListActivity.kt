@@ -154,12 +154,12 @@ class ItemListActivity : AppCompatActivity() {
         }
     }
 
+    // TODO: Did these two functions also
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.sort_menu, menu)
         return super.onCreateOptionsMenu(menu)
     }
 
-    // TODO: Did this one also
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when(item?.itemId){
             R.id.menu_sort -> {
