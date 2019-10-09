@@ -59,3 +59,19 @@ Idea/Concept is a Creative Thinking App with Open Source Ideas.
 Users come and add ideas. Anybody can use and see ideas freely and out of respect of using ideas, users are asked to make make a note in their product whith inspired by statements when making something with said ideas.
 
 Users will have a way to leave positive criticism to encourage refining concepts/ideas.
+
+Activities:
+-Idea List Page
+  Search Functionality by Tags
+-Idea Detail Page
+  Includes User Comments
+-Favorites Page
+  Displays List of Favorite Ideas
+-Login/Signout
+
+Drawer:
+-Access Favorite Page
+-Add Ideas
+
+Options:
+-Filter Searchable Ideas By Tags/Dates/LastEdited
