@@ -49,3 +49,29 @@ There are a few additional features which you can include in order to improve yo
 
 * Polish, polish, polish. Take this time to make your menus and app look awesome. Once the menus are done, build a custom theme and app icons for it as well.
 * Start implementing some of the features from your design. First step, instead of just changing the text, build multiple stock fragments and swap them out with the menu selection. Once that is done, you can start adding implementation to those fragments.
+
+
+
+## My Design Goals
+Idea/Concept
+Idea/Concept is a Creative Thinking App with Open Source Ideas.
+
+Users come and add ideas. Anybody can use and see ideas freely and out of respect of using ideas, users are asked to make make a note in their product whith inspired by statements when making something with said ideas.
+
+Users will have a way to leave positive criticism to encourage refining concepts/ideas.
+
+Activities:
+-Idea List Page
+  Search Functionality by Tags
+-Idea Detail Page
+  Includes User Comments
+-Favorites Page
+  Displays List of Favorite Ideas
+-Login/Signout
+
+Drawer:
+-Access Favorite Page
+-Add Ideas
+
+Options:
+-Filter Searchable Ideas By Tags/Dates/LastEdited
