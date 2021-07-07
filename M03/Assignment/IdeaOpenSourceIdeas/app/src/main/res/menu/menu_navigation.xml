@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/ideas_tech"
+            android:title="Tech Ideas"
+            android:checkable="true"/>
+        <item
+            android:id="@+id/ideas_game"
+            android:title="Game Ideas"
+            android:checkable="true"/>
+    </group>
+
+</menu>
